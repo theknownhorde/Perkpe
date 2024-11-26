@@ -178,22 +178,24 @@ const Dashboard = () => {
         {/* Points Cards */}
         <Row>
           {Object.entries(points).map(([platform, point]) => (
-            <Col md={4} key={platform}>
-              <Card className="points-card">
-                <Card.Body>
-                  <Card.Title>{platform}</Card.Title>
-                  <Card.Img
-                    variant="top"
-                    src={platformLogos[platform] || 'https://via.placeholder.com/150'}
-                    alt={platform}
-                  />
-                  <Card.Text className="points-text">{point} Points</Card.Text>
-                  <Button variant="primary" className="cta-button">
-                    Redeem Points
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
+            <div>
+              <Col md={4} key={platform}>
+                <Card className="points-card">
+                  <Card.Body>
+                    <Card.Title>{platform}</Card.Title>
+                    <Card.Img
+                      variant="top"
+                      src={platformLogos[platform] || 'https://via.placeholder.com/150'}
+                      alt={platform}
+                    />
+                    <Card.Text className="points-text">{point} Points</Card.Text>
+                    <Button variant="primary" className="cta-button">
+                      Redeem Points
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </div>
           ))}
         </Row>
 
