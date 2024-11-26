@@ -31,7 +31,7 @@ RUN npm install
 EXPOSE 3000 5002
 
 # Copy a script to start both services
-COPY start.sh /app/start.sh || True
+COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 # Expose the necessary ports
