@@ -1,11 +1,9 @@
-FROM node:18 AS test-app
+FROM node:18
 
-# Set working directory
 WORKDIR /app
 
-# Copy all project files
-COPY . ./
-
+# Copy the project into the image
+COPY . /app
 
 # Install dependencies for both frontend and backend
 # WORKDIR /app/frontend
@@ -22,11 +20,18 @@ COPY . ./
 
 # # Command to launch tmux with two panes: one for frontend and one for backend
 # CMD ["bash", "-c", "tmux new-session -d 'cd /app/frontend && npm start' && tmux split-window -v -p 50 'cd /app/backend && npm start' && tmux attach"]
-RUN cd frontend && npm install
-RUN cd ../backend && npm install
+WORKDIR /app/frontend
+RUN npm install
+
+# Install dependencies for the backend
+WORKDIR /app/backend
+RUN npm install
+
+# Expose the necessary ports
+EXPOSE 3000 5002
 
 # Copy a script to start both services
-COPY start.sh /app/start.sh
+COPY start.sh /app/start.sh || True
 RUN chmod +x /app/start.sh
 
 # Expose the necessary ports
