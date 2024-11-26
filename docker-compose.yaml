@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: node-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    ports:
+      - "5002:5002"
+    command: ["npm", "start"]
+    dns:
+      - 8.8.8.8  # Google DNS
+      - 8.8.4.4  # Google DNS
+      - 172.19.1.220
+      - 172.19.1.230
+      - 1.1.1.1
+      - 1.0.0.1
+      
+  frontend:
+    container_name: node-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    ports:
+      - "3000:3000"
+    command: ["./build.sh"]
+    dns:
+      - 8.8.8.8  # Google DNS
+      - 8.8.4.4  # Google DNS
+      - 172.19.1.220
+      - 172.19.1.230
+      - 1.1.1.1
+      - 1.0.0.1
+
+networks:
+  app-network:
+    driver: bridge  # Default network driver for communication between containers
