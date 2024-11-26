@@ -6,6 +6,7 @@ WORKDIR /app
 # Copy all project files
 COPY . ./
 
+
 # Install dependencies for both frontend and backend
 WORKDIR /app/frontend
 RUN npm install
