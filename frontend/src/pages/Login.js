@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert, Row, Col, Card } from 'react-bootstrap';
-import axios from '../utils/api';
+import axios from '../utils/api'; // Ensure this is configured correctly
 import './Login.css';
 
 const Login = () => {
@@ -8,12 +8,25 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    // Basic email format validation (optional)
+    const validateEmail = (email) => {
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return re.test(email);
+    };
+
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
 
+        // Log the data being sent for debugging
         console.log('[DEBUG] Email entered:', email);
         console.log('[DEBUG] Password entered:', password);
+
+        // Validate email format
+        if (!validateEmail(email)) {
+            setError('Invalid email format');
+            return;
+        }
 
         try {
             // Log the data being sent
@@ -21,16 +34,21 @@ const Login = () => {
 
             // Send login request to the backend
             const { data } = await axios.post('/users/login', { email, password });
+
+            // Log the successful response
             console.log('[DEBUG] Login successful:', data);
 
-            // Store token and name
+            // Store token and name in localStorage (make sure backend sends them)
             localStorage.setItem('token', data.token);
             localStorage.setItem('name', data.name);
 
             // Redirect to dashboard
             window.location.href = '/dashboard';
         } catch (err) {
-            console.error('[ERROR] Login failed:', err.response?.data?.error || err.message);
+            // Improved error handling for debugging
+            console.error('[ERROR] Login failed:', err.response ? err.response.data : err.message);
+            
+            // Set error message for display
             setError(err.response?.data?.error || 'Login failed. Please try again.');
         }
     };
