@@ -1,0 +1,99 @@
+/* Parent container for exact centering */
+.signup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    margin: 0;
+}
+
+/* Styling for the card */
+.signup-card {
+    border-radius: 20px;
+    padding: 60px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Modern shadow */
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Increased size for larger screens */
+}
+
+/* Title styling */
+.signup-title {
+    font-size: 2.5rem; /* Increased title font size */
+    font-weight: bold;
+    color: #4b0082; /* Purple */
+    margin-bottom: 40px;
+}
+
+/* Form inputs */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    padding: 15px; /* Increased input size */
+    font-size: 1.1rem; /* Increased font size */
+    margin-bottom: 20px; /* Increased spacing between inputs */
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(75, 0, 130, 0.6); /* Purple shadow */
+    border-color: #4b0082;
+}
+
+/* Signup button */
+button[type="submit"] {
+    background-color: #4b0082;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem; /* Larger button font size */
+    font-weight: bold;
+    padding: 15px;
+    transition: all 0.3s ease;
+    width: 100%; /* Full width button */
+}
+
+button[type="submit"]:hover {
+    background-color: #3a006b;
+    box-shadow: 0px 8px 15px rgba(58, 0, 107, 0.5); /* Button shadow */
+}
+
+/* Google login button container */
+.google-login-button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Success and Error alerts */
+.alert {
+    font-size: 1rem;
+    text-align: left;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .signup-card {
+        padding: 30px; /* Reduced padding for smaller screens */
+    }
+
+    .signup-title {
+        font-size: 2rem; /* Adjust title size for smaller screens */
+    }
+
+    .form-control {
+        padding: 12px; /* Smaller input padding */
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    button[type="submit"] {
+        font-size: 1rem; /* Smaller button font size */
+        padding: 12px; /* Adjust button padding */
+    }
+}

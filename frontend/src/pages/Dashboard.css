@@ -1,0 +1,229 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #4b0082;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-link i {
+    margin-right: 10px;
+}
+
+.sidebar-link:hover {
+    background-color: #6a0dad;
+    transform: translateX(8px);
+}
+
+.sidebar-link.active {
+    background-color: #6a0dad;
+    font-weight: bold;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+}
+
+/* Points Cards */
+.points-card {
+    border: 2px solid #4b0082;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    margin: 15px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.points-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.points-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.points-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4b0082;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    margin-top: 10px;
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #6a0dad;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Transaction History Table */
+.transaction-history {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.transaction-history th, .transaction-history td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 12px;
+}
+
+.transaction-history th {
+    background-color: #4b0082;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.transaction-history td {
+    text-align: center;
+}
+
+.transaction-history tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.transaction-history tr:hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+
+/* Chart Container */
+.chart-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .points-card {
+        width: 100%;
+    }
+
+    .transaction-history table {
+        font-size: 0.9rem;
+    }
+}
+
+/* Navbar */
+.navbar {
+    background-color: #4b0082;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+    color: #dcdcdc;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #4b0082;
+    color: white;
+}

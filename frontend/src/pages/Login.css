@@ -1,0 +1,81 @@
+/* Parent container for exact centering */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    margin: 0;
+}
+
+/* Styling for the card */
+.login-card {
+    border-radius: 20px;
+    padding: 60px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Modern shadow */
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Increased size for larger screens */
+}
+
+/* Title styling */
+.login-title {
+    font-size: 2.5rem; /* Increased title font size */
+    font-weight: bold;
+    color: #4b0082; /* Purple */
+    margin-bottom: 40px;
+}
+
+/* Form inputs */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    padding: 15px; /* Increased input size */
+    font-size: 1.1rem; /* Increased font size */
+    margin-bottom: 20px; /* Increased spacing between inputs */
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(75, 0, 130, 0.6); /* Purple shadow */
+    border-color: #4b0082;
+}
+
+/* Login button */
+button[type="submit"] {
+    background-color: #4b0082;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem; /* Larger button font size */
+    font-weight: bold;
+    padding: 15px;
+    transition: all 0.3s ease;
+    width: 100%; /* Full width button */
+}
+
+button[type="submit"]:hover {
+    background-color: #3a006b;
+    box-shadow: 0px 8px 15px rgba(58, 0, 107, 0.5); /* Button shadow */
+}
+
+/* Forgot password link */
+.forgot-link {
+    color: #4b0082;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem; /* Increased font size */
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgot-link:hover {
+    color: #3a006b;
+    text-decoration: underline;
+}

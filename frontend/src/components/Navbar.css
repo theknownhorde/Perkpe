@@ -1,0 +1,99 @@
+/* Navbar Grid Container */
+.navbar-grid-container {
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space out logo and links */
+  align-items: center; /* Center vertically */
+  background-color: #4b0082; /* Purple background */
+  padding: 10px 20px; /* Add padding around */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  color: #ffffff; /* White text */
+  position: sticky; /* Keep Navbar fixed at the top */
+  top: 0;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Left Section: Logo and Title */
+.navbar-logo-title {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Vertically align logo and text */
+  gap: 10px; /* Add spacing between logo and title */
+}
+
+.navbar-brand-custom {
+  display: flex; /* Ensure inline-flex alignment */
+  align-items: center;
+  color: #ffffff; /* White text */
+  font-size: 1.25rem; /* Slightly larger font */
+  font-weight: bold; /* Bold text */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+.navbar-brand-custom:hover {
+  color: #dcdcdc; /* Light gray on hover */
+}
+
+.navbar-logo {
+  height: 35px; /* Fixed height for logo */
+  width: 35px; /* Fixed width for logo */
+  border-radius: 50%; /* Circular logo */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Right Section: Links */
+.navbar-links {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Vertically center links */
+  gap: 20px; /* Space out links */
+}
+
+.nav-link-custom {
+  color: #ffffff; /* White text */
+  font-size: 1rem; /* Standard font size */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Medium weight text */
+  padding: 5px 10px; /* Add padding for click area */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover */
+}
+
+.nav-link-custom:hover {
+  background-color: #6a0dad; /* Lighter purple on hover */
+  color: #ffffff; /* Maintain white text on hover */
+}
+
+/* Dropdown Menu */
+.nav-dropdown-custom .dropdown-menu {
+  background-color: #4b0082; /* Purple background for dropdown */
+  border: none; /* Remove border */
+  margin-top: 10px; /* Space below toggle */
+}
+
+.nav-dropdown-custom .dropdown-item {
+  color: #ffffff; /* White text */
+  font-size: 0.9rem; /* Slightly smaller font */
+  transition: background-color 0.3s ease; /* Smooth hover */
+}
+
+.nav-dropdown-custom .dropdown-item:hover {
+  background-color: #6a0dad; /* Lighter purple hover */
+  color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-grid-container {
+      flex-direction: column; /* Stack items vertically */
+      text-align: center; /* Center-align text */
+  }
+
+  .navbar-links {
+      flex-direction: column; /* Stack links vertically */
+      gap: 10px; /* Reduce gap */
+  }
+
+  .nav-link-custom {
+      width: 100%; /* Full width for better clickability */
+      text-align: center; /* Center text */
+  }
+}
