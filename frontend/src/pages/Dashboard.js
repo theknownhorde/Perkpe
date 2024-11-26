@@ -176,10 +176,10 @@ const Dashboard = () => {
         {error && <p className="error">{error}</p>}
 
         {/* Points Cards */}
-        <Row>
+        <Col>
           {Object.entries(points).map(([platform, point]) => (
             <div>
-              <Col md={4} key={platform}>
+              <Row md={4} key={platform}>
                 <Card className="points-card">
                   <Card.Body>
                     <Card.Title>{platform}</Card.Title>
@@ -194,10 +194,10 @@ const Dashboard = () => {
                     </Button>
                   </Card.Body>
                 </Card>
-              </Col>
+              </Row>
             </div>
           ))}
-        </Row>
+        </Col>
 
         {/* Bar Chart */}
         <div className="chart-container">
