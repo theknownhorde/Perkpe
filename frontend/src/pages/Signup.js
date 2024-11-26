@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Button, Alert, Row, Col, Card, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import axios from '../utils/api';
+import axios2 from '../utils/newlogin'
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import './Signup.css'; // Ensure you import the CSS file
 
@@ -49,7 +50,7 @@ const Signup = () => {
         setLoading(true); // Set loading state for Google login
 
         try {
-            const { data } = await axios.post('/users/google-login', { tokenId: credentialResponse.credential });
+            const { data } = await axios2.post('/users/google-login', { tokenId: credentialResponse.credential });
             localStorage.setItem('token', data.token);
             localStorage.setItem('name', data.name);
             window.location.href = '/'; // Redirect to the dashboard or home
