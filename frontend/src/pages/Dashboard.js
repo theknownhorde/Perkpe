@@ -179,7 +179,7 @@ const Dashboard = () => {
         <Col>
           {Object.entries(points).map(([platform, point]) => (
             <div>
-              <Row md={4} key={platform}>
+              {/* <Row md={4} key={platform}> */}
                 <Card className="points-card">
                   <Card.Body>
                     <Card.Title>{platform}</Card.Title>
@@ -194,7 +194,7 @@ const Dashboard = () => {
                     </Button>
                   </Card.Body>
                 </Card>
-              </Row>
+              {/* </Row> */}
             </div>
           ))}
         </Col>
