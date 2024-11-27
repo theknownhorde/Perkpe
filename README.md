@@ -81,8 +81,6 @@ Create `.env` files in the `backend` and `frontend` directories with the followi
 ```env
 PORT=5000
 MONGO_URI=<Your_MongoDB_URI>
-ETH_PROVIDER_URL=<Your_Ethereum_Node_URL>
-PRIVATE_KEY=<Your_Ethereum_Wallet_Private_Key>
 ```
 
 #### Frontend `.env`:

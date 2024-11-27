@@ -5,6 +5,13 @@ import { Bar } from 'react-chartjs-2';
 import axios from '../utils/api'; // Axios instance with baseURL
 import moment from 'moment';
 import './Dashboard.css'; // Import custom CSS for styling
+import Amazon from '../assets/amazon-logo.webp';
+import Flipkart from '../assets/Flipkart-logo.webp';
+import Swiggy from '../assets/Swiggy.png';
+import Uber from '../assets/Uber.png';
+import Zomato from '../assets/Zomato.png';
+import OLA from '../assets/OLA.png';
+import Myntra from '../assets/Myntra.png';
 
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -49,14 +56,13 @@ const Dashboard = () => {
 
   // Logos and colors for platforms
   const platformLogos = {
-    Amazon: 'https://via.placeholder.com/150?text=Amazon',
-    Flipkart: 'https://via.placeholder.com/150?text=Flipkart',
-    Swiggy: 'https://via.placeholder.com/150?text=Swiggy',
-    Myntra: 'https://via.placeholder.com/150?text=Myntra',
-    Zomato: 'https://via.placeholder.com/150?text=Zomato',
-    Uber: 'https://via.placeholder.com/150?text=Uber',
-    Ola: 'https://via.placeholder.com/150?text=Ola',
-  };
+    Amazon: Amazon,
+    Flipkart: Flipkart,
+    Swiggy: Swiggy,
+    Myntra: Myntra,
+    Zomato: Zomato,
+    Uber: Uber,
+    OLA: OLA,};
 
   const platformColors = {
     Amazon: '#FF9900',
