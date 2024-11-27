@@ -30,10 +30,7 @@ The Loyalty Points Exchange System is a decentralized, blockchain-based platform
 - **Node.js**: Handles server-side logic and API endpoints.
 - **Express.js**: Facilitates RESTful API development and backend routing.
 
-### **Blockchain**
-- **Ethereum**: Provides the decentralized infrastructure for transaction management.
-- **Solidity**: Used to write smart contracts for automating point transfers and redemption.
-- **Web3.js**: For interacting with the Ethereum blockchain and smart contracts.
+
 
 ### **Database**
 - **MongoDB**: Stores user profiles, wallet metadata, and application settings.
@@ -41,7 +38,6 @@ The Loyalty Points Exchange System is a decentralized, blockchain-based platform
 ### **Testing Tools**
 - **Selenium**: For automated UI testing.
 - **Postman**: For API testing.
-- **Jest**: Unit testing for backend and frontend components.
 
 ---
 
@@ -49,7 +45,6 @@ The Loyalty Points Exchange System is a decentralized, blockchain-based platform
 - **Node.js**: v16 or higher
 - **npm**: v8 or higher
 - **MongoDB**: v5.0 or higher
-- **Ethereum Testnet**: Rinkeby or Goerli
 - **Web Browser**: Chrome, Firefox, or Edge
 
 ---
