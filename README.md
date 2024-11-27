@@ -1,82 +1,156 @@
-Loyalty Points Exchange System
-Overview
-The Loyalty Points Exchange System is a decentralized platform leveraging blockchain technology to provide a secure, transparent, and user-friendly solution for managing loyalty points. Users can store, transfer, and convert loyalty points in real time, all while enjoying the benefits of immutability and decentralization offered by blockchain technology.
 
-Features
-Single Digital Wallet: Consolidate loyalty points from multiple businesses in one place.
-Real-Time Transfers: Exchange loyalty points between users with minimal transaction costs.
-Reward Conversion: Convert points into discounts, cashback, or other rewards.
-Immutable Transaction History: Ensure trust and transparency with secure blockchain records.
-Responsive Dashboard: A seamless and user-friendly frontend interface.
-Tech Stack
-Frontend
-React.js: For building a responsive and dynamic user interface.
-Redux: For efficient state management across components.
-HTML5 & CSS3: For structuring and styling the UI.
-Bootstrap/Tailwind CSS: For responsive design and pre-styled components.
-Backend
-Node.js: For server-side application logic.
-Express.js: For handling API requests.
-MongoDB: For storing user and transaction data.
-Blockchain
-Ethereum (or Hyperledger Fabric): For decentralized and secure transactions.
-Smart Contracts: To handle loyalty point storage, transfers, and conversions.
-Additional Tools
-Metamask: For blockchain wallet integration.
-Docker: For containerized deployment.
-Jenkins: For CI/CD pipeline implementation.
-Installation and Setup
-Prerequisites
-Node.js (v14 or later)
-npm or yarn
-Docker (optional for deployment)
-Metamask extension for interacting with blockchain
+# Loyalty Points Exchange System Using Blockchain
 
-Steps
-Clone the Repository:
-git clone https://github.com/your-username/loyalty-points-exchange.git
+
+
+
+## **Overview**
+The Loyalty Points Exchange System is a decentralized, blockchain-based platform that allows users to manage and exchange loyalty points securely and transparently. This system addresses the inefficiencies of traditional loyalty programs by leveraging blockchain technology to create an immutable transaction ledger and enable seamless, real-time transactions with minimal costs.
+
+---
+
+## **Features**
+- **Unified Digital Wallet**: Store loyalty points from various businesses in one place.
+- **Points Exchange**: Transfer points between users or convert them into rewards such as discounts or cash equivalents.
+- **Transaction History**: Maintain a secure, immutable record of all transactions with blockchain technology.
+- **Responsive Dashboard**: Provides an intuitive and user-friendly interface for users to manage their loyalty points.
+- **Real-Time Notifications**: Alerts users about successful transactions, balance updates, and system announcements.
+
+---
+
+## **Technologies Used**
+
+### **Frontend**
+- **React.js**: For building a dynamic and responsive user interface.
+- **Redux**: State management for handling user data and transactions efficiently.
+- **Material-UI**: Pre-designed responsive components for enhanced user experience.
+- **HTML/CSS/JavaScript**: Core technologies for the structure, style, and interactivity of the application.
+
+### **Backend**
+- **Node.js**: Handles server-side logic and API endpoints.
+- **Express.js**: Facilitates RESTful API development and backend routing.
+
+### **Blockchain**
+- **Ethereum**: Provides the decentralized infrastructure for transaction management.
+- **Solidity**: Used to write smart contracts for automating point transfers and redemption.
+- **Web3.js**: For interacting with the Ethereum blockchain and smart contracts.
+
+### **Database**
+- **MongoDB**: Stores user profiles, wallet metadata, and application settings.
+
+### **Testing Tools**
+- **Selenium**: For automated UI testing.
+- **Postman**: For API testing.
+- **Jest**: Unit testing for backend and frontend components.
+
+---
+
+## **System Requirements**
+- **Node.js**: v16 or higher
+- **npm**: v8 or higher
+- **MongoDB**: v5.0 or higher
+- **Ethereum Testnet**: Rinkeby or Goerli
+- **Web Browser**: Chrome, Firefox, or Edge
+
+---
+
+## **Setup and Installation**
+
+### **Step 1: Clone the Repository**
+```bash
+git clone https://github.com/theknownhorde/Perkpe.git
 cd loyalty-points-exchange
+```
 
-Frontend:
+### **Step 2: Install Dependencies**
+Install dependencies for both the frontend and backend:
+```bash
+# Install backend dependencies
+cd backend
 npm install
 
-Backend:
+# Install frontend dependencies
+cd ../frontend
 npm install
+```
 
-Backend:
-makefile
+### **Step 3: Configure Environment Variables**
+Create `.env` files in the `backend` and `frontend` directories with the following values:
+
+#### Backend `.env`:
+```env
 PORT=5000
-MONGO_URI=<Your MongoDB URI>
-PRIVATE_KEY=<Blockchain Private Key>
+MONGO_URI=<Your_MongoDB_URI>
+ETH_PROVIDER_URL=<Your_Ethereum_Node_URL>
+PRIVATE_KEY=<Your_Ethereum_Wallet_Private_Key>
+```
 
-Frontend:
-arduino
-REACT_APP_BACKEND_URL=http://localhost:5000
-Run the Application:
+#### Frontend `.env`:
+```env
+REACT_APP_API_URL=http://localhost:5002
+REACT_APP_ETH_NETWORK=rinkeby
+```
 
-Start the backend:
+### **Step 4: Start the Application**
+Start the backend and frontend servers:
+```bash
+# Start backend server
+cd backend
 npm start
 
-Start the frontend:
+# Start frontend server
+cd ../frontend
 npm start
-Access the App: Open your browser and go to http://localhost:3000.
+```
 
-Folder Structure
-loyalty-points-exchange/
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/    # React components
-│   │   ├── redux/         # Redux state management
-│   │   ├── pages/         # Pages like Dashboard, Profile, etc.
-│   │   └── App.js         # Main app entry point
-├── backend/
-│   ├── controllers/       # API controllers
-│   ├── models/            # Mongoose models
-│   ├── routes/            # API routes
-│   └── server.js          # Backend entry point
-├── smart-contracts/       # Solidity contracts
-├── Dockerfile             # Docker configuration
-├── docker-compose.yml     # Multi-container setup
-└── README.md              # Project documentation
+The application will be accessible at `http://localhost:3000`.
+
+---
+
+## **Usage**
+1. **Sign Up**: Create an account and securely log in using multi-factor authentication.
+2. **Add Points**: Link loyalty points from participating businesses to your digital wallet.
+3. **Transfer Points**: Send points to other users in real time.
+4. **Redeem Points**: Convert points into cash or discounts seamlessly.
+5. **View Transaction History**: Access an immutable record of all transactions.
+
+---
+
+## **Smart Contract Details**
+- **Contract Language**: Solidity
+- **Key Functions**:
+  - `transferPoints(address to, uint amount)`: Transfers points between users.
+  - `redeemPoints(uint amount)`: Redeems points for rewards.
+  - `getTransactionHistory()`: Retrieves the transaction history for a user.
+- **Gas Optimization**: Implements efficient algorithms to minimize transaction costs.
+
+---
+
+## **Testing**
+- **Unit Tests**: Validate individual components using Jest.
+- **Integration Tests**: Test end-to-end functionality using Selenium.
+- **API Tests**: Ensure the APIs return correct responses using Postman.
+
+To run tests:
+```bash
+# Run backend tests
+cd backend
+npm test
+
+# Run frontend tests
+cd ../frontend
+npm test
+```
+
+---
+
+## **Contributors**
+- **Akshit Anand** (Data Science)
+- **Samay Singh** (Artificial Intelligence)
+- **Yogesh Tanwar** (Data Science)
+
+---
+
+## **License**
+This project is licensed under the [MIT License](LICENSE).
 
