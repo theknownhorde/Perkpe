@@ -15,7 +15,12 @@ connectDB();
 
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
-app.use(cors("*")); // Enable Cross-Origin Resource Sharing
+const corsOptions = {
+    origin: 'http://localhost:3000', // Update this to your frontend URL
+    credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(morgan('dev')); // Log HTTP requests in development mode
 
 // Debug logger for incoming requests
@@ -42,7 +47,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Start the server
-const PORT = process.env.PORT || 5003;
+const PORT = process.env.PORT || 5002;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
