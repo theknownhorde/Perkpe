@@ -40,7 +40,7 @@ const Login = () => {
 
             // Store token and name in localStorage (make sure backend sends them)
             localStorage.setItem('token', data.token);
-            localStorage.setItem('name', data.name);
+            localStorage.setItem('name', data.user.name);
 
             // Redirect to dashboard
             window.location.href = '/dashboard';

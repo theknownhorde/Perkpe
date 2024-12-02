@@ -62,7 +62,6 @@ exports.loginUser = async (req, res) => {
         // const hashed = await bcrypt.hash(password, 10)
         // console.log(hashed);
         const isMatch = await user.matchPassword(password);
-        console.log()
         if (!isMatch) {
             console.error('[ERROR] Incorrect password for:', email);
             return res.status(400).json({ error: 'Invalid email or password' });
@@ -71,7 +70,7 @@ exports.loginUser = async (req, res) => {
         const token = generateToken(user._id);
         console.log('[DEBUG] User logged in successfully:', user);
 
-        res.json({ 
+        res.status(200).json({ 
             token, 
             user: { id: user._id, email: user.email, name: user.name } 
         });
