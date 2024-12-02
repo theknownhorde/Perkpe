@@ -80,7 +80,7 @@ MONGO_URI=<Your_MongoDB_URI>
 
 #### Frontend `.env`:
 ```env
-REACT_APP_API_URL=http://localhost:5002
+REACT_APP_API_URL=http://localhost:5003
 REACT_APP_ETH_NETWORK=rinkeby
 ```
 

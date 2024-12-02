@@ -12,14 +12,11 @@ WORKDIR /app/backend
 RUN npm install
 
 # Expose the necessary ports
-EXPOSE 3000 5002
+EXPOSE 3000 5003
 
 # Copy a script to start both services
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
-
-# Expose the necessary ports
-EXPOSE 3000 5002
 
 # Run the script to start both services
 CMD ["/bin/sh", "/app/start.sh"]
