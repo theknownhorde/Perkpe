@@ -43,7 +43,8 @@ const Login = () => {
             localStorage.setItem('name', data.user.name);
 
             // Redirect to dashboard
-            window.location.href = '/dashboard';
+            // window.location.href = '/dashboard';
+            window.location.href = '/';
         } catch (err) {
             // Improved error handling for debugging
             console.error('[ERROR] Login failed:', err.response ? err.response.data : err.message);
