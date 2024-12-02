@@ -57,7 +57,10 @@ exports.loginUser = async (req, res) => {
             return res.status(400).json({ error: 'Invalid email or password' });
         }
         console.log(user);
+        console.log("bycrypt:");
+        console.log(bcrypt.hash(password, 10));
         const isMatch = await bcrypt.compare(password, user.password);
+        console.log()
         if (!isMatch) {
             console.error('[ERROR] Incorrect password for:', email);
             return res.status(400).json({ error: 'Invalid email or password' });
