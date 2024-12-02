@@ -1,5 +1,5 @@
 const { OAuth2Client } = require('google-auth-library');
-const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
@@ -27,7 +27,7 @@ exports.registerUser = async (req, res) => {
             return res.status(400).json({ error: 'User already exists' });
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
+        // const hashedPassword = await bcrypt.hash(password, 10);
         user = await User.create({ name, email, password: hashedPassword });
 
         const token = generateToken(user._id);
@@ -57,10 +57,10 @@ exports.loginUser = async (req, res) => {
             return res.status(400).json({ error: 'Invalid email or password' });
         }
         console.log(user);
-        console.log("bycrypt:");
-        const hashed = await bcrypt.hash(password, 10)
-        console.log(hashed);
-        const isMatch = await bcrypt.compare(password, user.password);
+        // console.log("bycrypt:");
+        // const hashed = await bcrypt.hash(password, 10)
+        // console.log(hashed);
+        const isMatch = await user.matchPassword(password);
         console.log()
         if (!isMatch) {
             console.error('[ERROR] Incorrect password for:', email);
