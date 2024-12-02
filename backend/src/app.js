@@ -15,7 +15,7 @@ connectDB();
 
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
-app.use(cors()); // Enable Cross-Origin Resource Sharing
+app.use(cors("*")); // Enable Cross-Origin Resource Sharing
 app.use(morgan('dev')); // Log HTTP requests in development mode
 
 // Debug logger for incoming requests
