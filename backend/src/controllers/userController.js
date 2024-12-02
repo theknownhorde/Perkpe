@@ -1,5 +1,6 @@
 const { OAuth2Client } = require('google-auth-library');
 // const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
@@ -28,7 +29,7 @@ exports.registerUser = async (req, res) => {
         }
 
         // const hashedPassword = await bcrypt.hash(password, 10);
-        user = await User.create({ name, email, password: hashedPassword });
+        user = await User.create({ name, email, password: password });
 
         const token = generateToken(user._id);
         console.log('[DEBUG] User registered successfully:', user);
@@ -100,7 +101,8 @@ exports.googleLogin = async (req, res) => {
         let user = await User.findOne({ email });
         if (!user) {
             console.log('[DEBUG] New Google user. Creating account for:', email);
-            const hashedPassword = await bcrypt.hash('defaultpassword', 10); // Default password for Google users
+            // const hashedPassword = await bcrypt.hash('defaultpassword', 10); // Default password for Google users
+            const hashedPassword = crypto.createHash('sha256').update('defaultPassword').digest('hex');
             user = await User.create({ name, email, password: hashedPassword });
         }
 
