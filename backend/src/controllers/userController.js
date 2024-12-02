@@ -58,7 +58,8 @@ exports.loginUser = async (req, res) => {
         }
         console.log(user);
         console.log("bycrypt:");
-        console.log(bcrypt.hash(password, 10));
+        const hashed = await bcrypt.hash(password, 10)
+        console.log(hashed);
         const isMatch = await bcrypt.compare(password, user.password);
         console.log()
         if (!isMatch) {
